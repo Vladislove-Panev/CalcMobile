@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CalcMobile.MainPage">
+
+        <Grid Margin="10, 5 , 5, 5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lable" Text="0" FontSize="75" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" VerticalTextAlignment="Center" HorizontalTextAlignment="End" />
+            
+        <Button x:Name="delete" Grid.Row="1" Grid.Column="0" Text="AC" FontSize="Large" Clicked="OnClear" ClassId="AC"/>
+        <Button x:Name="plusMinus" Grid.Row="1" Grid.Column="1" Text="+/-" FontSize="Large" Clicked="OnMinus" ClassId="plusMinus"/>
+        <Button x:Name="percent" Grid.Row="1" Grid.Column="2" Text="%" FontSize="Large"  Clicked="OnCalculate"  ClassId="percent" />
+        <Button x:Name="division" Grid.Row="1" Grid.Column="3" Text="/" FontSize="Large" Clicked="OnSelectOperator" ClassId="division" />
+
+        <Button x:Name="button7" Grid.Row="2" Grid.Column="0" Text="7" FontSize="Large" Clicked="OnSelectNumber" ClassId="seven" />
+        <Button x:Name="button8" Grid.Row="2" Grid.Column="1" Text="8" FontSize="Large" Clicked="OnSelectNumber" ClassId="eight"/>
+        <Button x:Name="button9" Grid.Row="2" Grid.Column="2" Text="9" FontSize="Large" Clicked="OnSelectNumber" ClassId="nine" />
+        <Button x:Name="multiply" Grid.Row="2" Grid.Column="3" Text="*" FontSize="Large" Clicked="OnSelectOperator" ClassId="multiply" />
+
+        <Button x:Name="button4" Grid.Row="3" Grid.Column="0" Text="4" FontSize="Large" Clicked="OnSelectNumber" ClassId="four" />
+        <Button x:Name="button5" Grid.Row="3" Grid.Column="1" Text="5" FontSize="Large" Clicked="OnSelectNumber" ClassId="five" />
+        <Button x:Name="button6" Grid.Row="3" Grid.Column="2" Text="6" FontSize="Large" Clicked="OnSelectNumber" ClassId="six" />
+        <Button x:Name="minus" Grid.Row="3" Grid.Column="3" Text="-" FontSize="33" Clicked="OnSelectOperator" ClassId="minus" />
+
+        <Button x:Name="button1" Grid.Row="4" Grid.Column="0" Text="1" FontSize="Large" Clicked="OnSelectNumber" ClassId="one" />
+        <Button x:Name="button2" Grid.Row="4" Grid.Column="1" Text="2" FontSize="Large" Clicked="OnSelectNumber" ClassId="two" />
+        <Button x:Name="button3" Grid.Row="4" Grid.Column="2" Text="3" FontSize="Large" Clicked="OnSelectNumber" ClassId="three" />
+        <Button x:Name="plus" Grid.Row="4" Grid.Column="3" Text="+" FontSize="Large" Clicked="OnSelectOperator" ClassId="plus" />
+
+        <Button x:Name="button0" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Text="0" FontSize="Large" Clicked="OnSelectNumber" ClassId="zero" />
+        <Button x:Name="decimal" Grid.Row="5" Grid.Column="2" Text="," FontSize="Large" Clicked="OnDecimal" ClassId="decimal" />
+        <Button x:Name="solve" Grid.Row="5" Grid.Column="3" Text="=" FontSize="Large" Clicked="OnCalculate" ClassId="solve" />
+    </Grid>
+    
+</ContentPage>
