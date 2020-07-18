@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="CalcMobile.Views.CalculatorView"
+             xmlns:local="clr-namespace:CalcMobile"
+             xmlns:local1="clr-namespace:CalcMobile.ViewModels">
+    <ContentPage.BindingContext>
+        <local1:CalculatorViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid Margin="10, 5 , 5, 5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            
+            <Label Text= "{Binding Model.Equation}" Grid.Row="0" Grid.ColumnSpan="4" HorizontalTextAlignment="End" VerticalTextAlignment="Center"
+            FontSize="30" />
+            <Label Text= "{Binding Model.Solution}"  Grid.Row="1"  Grid.ColumnSpan="4" HorizontalTextAlignment="End" VerticalTextAlignment="End"
+            FontSize="40"  />
+
+            <Button x:Name="delete" Grid.Row="2" Grid.Column="0" Text="AC" FontSize="Large" Command="{Binding DeleteCommand}"/>
+            <Button x:Name="plusMinus" Grid.Row="2" Grid.Column="1" Text="+/-" FontSize="Large" Command="{Binding NegativeCommand}" />
+            <Button x:Name="percent" Grid.Row="2" Grid.Column="2" Text="%" FontSize="Large" Command="{Binding PercentCommand}"  />
+            <Button x:Name="division" Grid.Row="2" Grid.Column="3" Text="/" FontSize="Large" Command="{Binding DivCommand}" />
+
+            <Button x:Name="button7" Grid.Row="3" Grid.Column="0" Text="7" FontSize="Large" Command="{Binding SevenCommand}" />
+            <Button x:Name="button8" Grid.Row="3" Grid.Column="1" Text="8" FontSize="Large" Command="{Binding EightCommand}" />
+            <Button x:Name="button9" Grid.Row="3" Grid.Column="2" Text="9" FontSize="Large"  Command="{Binding NineCommand}" />
+            <Button x:Name="multiply" Grid.Row="3" Grid.Column="3" Text="*" FontSize="Large" Command="{Binding MultiplyCommand}" />
+
+            <Button x:Name="button4" Grid.Row="4" Grid.Column="0" Text="4" FontSize="Large" Command="{Binding FourCommand}" />
+            <Button x:Name="button5" Grid.Row="4" Grid.Column="1" Text="5" FontSize="Large" Command="{Binding FiveCommand}" />
+            <Button x:Name="button6" Grid.Row="4" Grid.Column="2" Text="6" FontSize="Large" Command="{Binding SixCommand}" />
+            <Button x:Name="minus" Grid.Row="4" Grid.Column="3" Text="-" FontSize="33" Command="{Binding SubCommand}" />
+
+            <Button x:Name="button1" Grid.Row="5" Grid.Column="0" Text="1" FontSize="Large" Command="{Binding OneCommand}" />
+            <Button x:Name="button2" Grid.Row="5" Grid.Column="1" Text="2" FontSize="Large" Command="{Binding TwoCommand}" />
+            <Button x:Name="button3" Grid.Row="5" Grid.Column="2" Text="3" FontSize="Large" Command="{Binding ThreeCommand}" />
+            <Button x:Name="plus" Grid.Row="5" Grid.Column="3" Text="+" FontSize="Large" Command="{Binding AddCommand}" />
+
+            <Button x:Name="button0" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Text="0" FontSize="Large" Command="{Binding ZeroCommand}" />
+            <Button x:Name="decimal" Grid.Row="6" Grid.Column="2" Text="," Grid.ColumnSpan="2" FontSize="Large" Command="{Binding DotCommand}" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
