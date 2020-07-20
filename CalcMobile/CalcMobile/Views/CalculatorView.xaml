@@ -33,8 +33,8 @@
             <Label Text= "{Binding Model.Solution}"  Grid.Row="1"  Grid.ColumnSpan="4" HorizontalTextAlignment="End" VerticalTextAlignment="End"
             FontSize="40"  />
 
-            <Button x:Name="delete" Grid.Row="2" Grid.Column="0" Text="AC" FontSize="Large" Command="{Binding DeleteCommand}"/>
-            <Button x:Name="plusMinus" Grid.Row="2" Grid.Column="1" Text="+/-" FontSize="Large" Command="{Binding NegativeCommand}" />
+            <Button x:Name="delete" Grid.Row="2" Grid.Column="0" Text="C" FontSize="Large" Command="{Binding DeleteCommand}"/>
+            <Button x:Name="clear" Grid.Row="2" Grid.Column="1" Text="AC" FontSize="Large" Command="{Binding ClearCommand}"/>
             <Button x:Name="percent" Grid.Row="2" Grid.Column="2" Text="%" FontSize="Large" Command="{Binding PercentCommand}"  />
             <Button x:Name="division" Grid.Row="2" Grid.Column="3" Text="/" FontSize="Large" Command="{Binding DivCommand}" />
 

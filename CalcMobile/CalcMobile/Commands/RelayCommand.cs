@@ -20,19 +20,6 @@ namespace CalcMobile.Commands
             this.canExecute = canExecute;
         }
 
-        public RelayCommand(Action<object> execute, Func<object, bool> canExecute, INotifyPropertyChanged npc = null)
-        {
-            this.execute = execute;
-            this.canExecute = canExecute;
-
-            if (npc != null)
-                npc.PropertyChanged += delegate { _ = canExecute(parameter); };
-        }
-
-        public RelayCommand(Action execute, Func<bool> canExecute, INotifyPropertyChanged npc = null) : this(o => execute(), o => canExecute(), npc)
-        {
-        }
-
         public bool CanExecute(object parameter)
         {
             return canExecute == null || canExecute(parameter);

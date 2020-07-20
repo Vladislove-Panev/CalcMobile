@@ -582,7 +582,7 @@ namespace CalcMobile.ViewModels
         {
 
 
-            if ((model.FirstNumber != null & model.FirstNumber != string.Empty) && (model.Operation == null || model.Operation == string.Empty))
+            if ((model.FirstNumber != null & model.FirstNumber != string.Empty && model.Equation.Length - 1 >= 0) && (model.Operation == null || model.Operation == string.Empty))
             {
                 model.Equation = model.Equation.Remove(model.Equation.Length - 1);
                 model.FirstNumber = model.FirstNumber.Remove(model.FirstNumber.Length - 1);
@@ -621,34 +621,33 @@ namespace CalcMobile.ViewModels
             return true;
         }
 
-        private ICommand _negativeCommand;
-
-        public ICommand NegativeCommand
+        private ICommand _clearCommand;
+  
+        public ICommand ClearCommand
         {
             get
             {
-                if (_negativeCommand == null)
+                if (_clearCommand == null)
                 {
-                    _negativeCommand = new RelayCommand(p => AddNegativeSign(), p => CanAddNegativeSign());
+                    _clearCommand = new RelayCommand(
+                    param => Clear(),
+                    param => CanClear()
+                    );
                 }
-
-                return _negativeCommand;
+                return _clearCommand;
             }
         }
-
-        private void AddNegativeSign()
+        private void Clear()
         {
-            if (model.FirstNumber == null || model.FirstNumber == String.Empty)
-            {
-                model.FirstNumber += "-";
-            }
-            if (model.SecondNumber == null || model.SecondNumber == String.Empty)
-            {
-                model.SecondNumber += "-";
-            }
+            model.FirstNumber = null;
+            model.SecondNumber = null;
+            model.Equation = null;
+            model.Operation = null;
+            model.Solution = null;
         }
 
-        private bool CanAddNegativeSign()
+
+        private bool CanClear()
         {
             return true;
         }
